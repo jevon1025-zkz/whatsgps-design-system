@@ -1,0 +1,129 @@
+:root {
+  /* Color: brand */
+  --color-brand-primary: #0068ff;
+  --color-brand-active: #1755e7;
+  --color-brand-sidebar-active: #3370ff;
+
+  /* Color: status */
+  --color-status-success: #05cd99;
+  --color-status-warning: #ffce20;
+  --color-status-error: #ff4d4f;
+
+  /* Color: text */
+  --color-text-primary: #1b2559;
+  --color-text-secondary: #2b3574;
+  --color-text-tertiary: #707eae;
+  --color-text-legacy-muted: #889eaf; /* ⚠ inferred, not in variables.scss — verify against Figma */
+  --color-text-disabled: #a3aed0;
+  --color-text-inverse: #ffffff;
+
+  /* Color: backgrounds */
+  --color-bg-page: #f4f7fe;
+  --color-bg-surface: #ffffff;
+  --color-bg-surface-muted: #f5f7fa; /* ⚠ inferred, not in variables.scss — verify against Figma */
+  --color-bg-hover: #f0f5ff;
+  --color-bg-selected: rgba(0, 104, 255, 0.1);
+  --color-bg-info: rgba(0, 104, 255, 0.08);
+  --color-bg-success: rgba(5, 205, 153, 0.1);
+  --color-bg-warning: rgba(255, 206, 32, 0.1);
+  --color-bg-error: rgba(255, 77, 79, 0.08);
+
+  /* Color: border and overlay */
+  --color-border-default: #e9edf7;
+  --color-border-strong: #e4e7ed; /* ⚠ inferred (Element UI default) — verify against Figma */
+  --color-overlay-modal: rgba(0, 0, 0, 0.45);
+
+  /* Color: sidebar and video */
+  --color-sidebar-start: #1c2758;
+  --color-sidebar-end: #111835;
+  --color-sidebar-deep: #0f123f;
+  --color-video-bg: #0a1128;
+
+  /* Color: sidebar menu states (dynamic theme — default fallbacks from variables.scss) */
+  --color-sidebar-menu-text: #a2a2a2;
+  --color-sidebar-menu-active-text: #ffffff;
+  --color-sidebar-menu-bg: #202020;
+  --color-sidebar-menu-hover-bg: #202020;
+  --color-sidebar-menu-active-bg: #3370ff;
+  --color-sidebar-submenu-bg: #333333;
+  --color-sidebar-submenu-hover-bg: #333333;
+  --color-sidebar-submenu-active-bg: #3370ff;
+
+  /* Color: icon and utility */
+  --color-icon-default: #707eae;
+  --color-icon-active: #0068ff;
+  --color-icon-disabled: #a3aed0;
+  --color-icon-danger: #ff4d4f;
+  --color-close-hover: #8c8c8c;
+
+  /* Typography */
+  --font-family-base: PingFang SC, Microsoft YaHei, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-size-display-number: 32px;
+  --font-size-page-title: 20px;
+  --font-size-section-title: 18px;
+  --font-size-card-title: 16px;
+  --font-size-body-md: 14px;
+  --font-size-body-dense: 13px;
+  --font-size-caption: 12px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-display-number: 38px;
+  --line-height-page-title: 28px;
+  --line-height-section-title: 25px;
+  --line-height-card-title: 24px;
+  --line-height-body-md: 22px;
+  --line-height-body-dense: 20px;
+  --line-height-caption: 18px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Radius */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-control: 8px;
+  --radius-panel: 12px;
+  --radius-card: 20px;
+  --radius-modal: 20px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* Shadow */
+  --shadow-surface: 0 4px 12px rgba(15, 18, 63, 0.1);
+  --shadow-hover: 0 8px 24px rgba(15, 18, 63, 0.15);
+  --shadow-header: 0 1px 4px rgba(0, 21, 41, 0.08);
+  --shadow-floating: 0 0 12px rgba(213, 214, 223, 0.5);
+  --shadow-light: 0 0 7px rgba(0, 0, 0, 0.05);
+
+  /* Size */
+  --size-header-height: 64px;
+  --size-sidebar-icon-width: 64px;
+  --size-sidebar-full-width: 240px;
+  --size-panel-business-width: 420px;
+  --size-panel-map-width: 486px;
+  --size-control-sm-height: 32px;
+  --size-control-md-height: 40px;
+  --size-control-top-search-height: 36px;
+  --size-table-row-height: 48px;
+  --size-table-header-height: 54px;
+  --size-modal-device-width: 80vw;
+  --size-modal-device-max-width: 1600px;
+  --size-floating-action-width: 48px;
+
+  /* Motion */
+  --motion-duration-fast: 120ms;
+  --motion-duration-base: 200ms;
+  --motion-easing-base: ease;
+}
