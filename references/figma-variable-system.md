@@ -1,102 +1,41 @@
 # Figma Variable System
 
-Use this reference when creating Figma variable files, token tables, or import instructions.
+Use this reference for Figma Variables, token tables, or import instructions. Read color-token-governance.md and the project-level color guide first.
 
-## Recommended Collection
+## Provenance
 
-Create one collection named:
+- The navigation 3.0 Figma has no local Variables. Do not claim a variable export from it.
+- Color architecture comes from the bundled [color guide](../assets/source-materials/design-token-color-guide.md).
+- Use Figma frames to validate visual application, not to invent undocumented variable provenance.
 
-```text
-WhatsGPS Tokens
-```
+## Collections
 
-Within it, use these variable groups:
+| Collection | Modes | Purpose |
+|---|---|---|
+| 01 Gradient Palette | Base | Primitive color ramps. |
+| 02 Component Tokens | Light, Dark | UI/component/business color aliases used in design and implementation. |
+| WhatsGPS Tokens | As needed | Non-color variables such as space, radius, size, font, motion, and platform. |
+| Color | Existing modes only | Legacy compatibility; do not add variables by default. |
 
-- `color`
-- `space`
-- `radius`
-- `size`
-- `font`
-- `shadow`
-- `motion`
-- `platform`
+Do not add a separate semantic color collection by default. Business meaning belongs in 02 Component Tokens.
 
-## Naming Rules
+## Naming
 
-Use slash names:
+- Color palette: brand/5, grey/9, dark-blue/6.
+- Component colors: sidebar/bg-start, button/primary/default, device/moving.
+- Non-color: space/4, radius/control, size/table/row-height, font/size/body-md.
+- Use blue-grey, grey, and dark-blue; do not introduce slate or navy as final family names.
 
-- `color/brand/primary`
-- `color/text/primary`
-- `color/bg/page`
-- `space/4`
-- `radius/control`
-- `size/table/row-height`
-- `font/size/body-md`
+## Import And Styles
 
-Do not use SCSS `$primary` style names in Figma. Keep old SCSS names only as aliases in documentation.
+- For Variables import, prefer DTCG JSON with color, dimension, number, string, fontFamily, and duration types.
+- Figma Variables do not replace Text Styles, Effect Styles, or reusable gradient styles. Provide those separately when requested.
+- Preserve legacy aliases during migration; replace high-frequency text, background, surface, border, button, table, input, sidebar, and state usages first.
 
-## Import Format
+## Navigation Mapping
 
-When the user asks for a file to import into Figma Variables, output DTCG JSON.
+Use the mappings documented in pc-navigation-guidelines.md. Keep legacy frontend aliases in design-tokens.css until consumers migrate.
 
-Supported practical token types:
+## Publication Check
 
-- `color`
-- `dimension`
-- `number`
-- `string`
-- `fontFamily`
-- `duration`
-
-Use colors as sRGB components and alpha. Use dimensions as px.
-
-## What Figma Variables Cannot Fully Replace
-
-Figma variables do not fully replace:
-
-- Text Styles.
-- Effect Styles.
-- Gradients as reusable full gradient styles.
-- Complex shadows.
-
-Provide variables plus manual style instructions.
-
-## Manual Text Styles To Create
-
-Create these Figma Text Styles after importing variables:
-
-| Style | Size | Weight | Line height | Color |
-|---|---:|---:|---:|---|
-| Display / Number | 32 | 700 | 38 | `color/brand/primary` |
-| Page / Title | 20 | 600 | 28 | `color/text/primary` |
-| Section / Title | 18 | 600 | 25 | `color/text/primary` |
-| Card / Title | 16 | 600 | 24 | `color/text/primary` |
-| Body / MD | 14 | 400 | 22 | `color/text/primary` |
-| Body / MD Medium | 14 | 500 | 22 | `color/text/primary` |
-| Body / Dense | 13 | 400 | 20 | `color/text/primary` |
-| Caption | 12 | 400 | 18 | `color/text/tertiary` |
-
-## Manual Effect Styles To Create
-
-Create these Figma Effect Styles:
-
-- `Shadow / Surface`: `0 4 12 0 rgba(15, 18, 63, 0.10)`
-- `Shadow / Hover`: `0 8 24 0 rgba(15, 18, 63, 0.15)`
-- `Shadow / Header`: `0 1 4 0 rgba(0, 21, 41, 0.08)`
-- `Shadow / Floating`: `0 0 12 0 rgba(213, 214, 223, 0.50)`
-- `Shadow / Light`: `0 0 7 0 rgba(0, 0, 0, 0.05)`
-
-## Manual Gradient Styles To Create
-
-Create sidebar gradient style:
-
-```text
-linear-gradient(0deg, color/sidebar/start #1C2758, color/sidebar/end #111835)
-```
-
-## Token Governance
-
-- Add a new color only if it has a semantic purpose.
-- Use existing alpha colors for hover, selected, banner, tag, and overlay states.
-- Keep light/dark modes out of scope unless the user explicitly asks; the current system is PC light mode with dark sidebar.
-- For Figma libraries, publish the token file only after checking common components: button, input, table, tabs, dialog, tree panel, device detail workbench.
+Before publishing a library, inspect button, input, table, tabs, dialog, tree panel, navigation expanded/collapsed states, message popover, search, device states, and device-detail workbench in both relevant modes.

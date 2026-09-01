@@ -152,11 +152,11 @@ Rules:
 
 Use dense desktop form structure:
 
-- Two-column layout for wide dialogs.
-- Label width commonly 80-110px.
-- Labels right-aligned.
-- Row gap 16px.
-- Column gap 24-48px depending content.
+- New or substantially redesigned forms use labels above controls.
+- Fields flow downward in task order inside continuous business sections.
+- Keep control widths stable within each field family.
+- Use multi-column structures only for repeated setting matrices, tables, or genuine side-by-side comparison.
+- Keep vertical field and section gaps compact enough for PC operational work.
 - Full-width fields for textarea, upload, alert banner, and table sections.
 
 Required state:

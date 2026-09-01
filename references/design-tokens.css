@@ -1,4 +1,22 @@
 :root {
+  /* 01 Gradient Palette: confirmed navigation sources */
+  --brand-5: #3370ff;
+  --grey-5: #a2a2a2;
+  --grey-8: #333333;
+  --grey-9: #202020;
+  --dark-blue-6: #1c2758;
+  --dark-blue-7: #111835;
+  --white: #ffffff;
+
+  /* 02 Component Tokens: formal navigation aliases */
+  --sidebar-bg-start: var(--dark-blue-6);
+  --sidebar-bg-end: var(--dark-blue-7);
+  --sidebar-menu-bg: var(--grey-9);
+  --sidebar-submenu-bg: var(--grey-8);
+  --sidebar-menu-text: var(--grey-5);
+  --sidebar-menu-active-bg: var(--brand-5);
+  --sidebar-menu-active-text: var(--white);
+
   /* Color: brand */
   --color-brand-primary: #0068ff;
   --color-brand-active: #1755e7;
@@ -34,20 +52,20 @@
   --color-overlay-modal: rgba(0, 0, 0, 0.45);
 
   /* Color: sidebar and video */
-  --color-sidebar-start: #1c2758;
-  --color-sidebar-end: #111835;
+  --color-sidebar-start: var(--sidebar-bg-start);
+  --color-sidebar-end: var(--sidebar-bg-end);
   --color-sidebar-deep: #0f123f;
   --color-video-bg: #0a1128;
 
   /* Color: sidebar menu states (dynamic theme — default fallbacks from variables.scss) */
-  --color-sidebar-menu-text: #a2a2a2;
-  --color-sidebar-menu-active-text: #ffffff;
-  --color-sidebar-menu-bg: #202020;
-  --color-sidebar-menu-hover-bg: #202020;
-  --color-sidebar-menu-active-bg: #3370ff;
-  --color-sidebar-submenu-bg: #333333;
-  --color-sidebar-submenu-hover-bg: #333333;
-  --color-sidebar-submenu-active-bg: #3370ff;
+  --color-sidebar-menu-text: var(--sidebar-menu-text);
+  --color-sidebar-menu-active-text: var(--sidebar-menu-active-text);
+  --color-sidebar-menu-bg: var(--sidebar-menu-bg);
+  --color-sidebar-menu-hover-bg: var(--sidebar-menu-bg);
+  --color-sidebar-menu-active-bg: var(--sidebar-menu-active-bg);
+  --color-sidebar-submenu-bg: var(--sidebar-submenu-bg);
+  --color-sidebar-submenu-hover-bg: var(--sidebar-submenu-bg);
+  --color-sidebar-submenu-active-bg: var(--sidebar-menu-active-bg);
 
   /* Color: icon and utility */
   --color-icon-default: #707eae;

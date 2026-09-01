@@ -65,6 +65,27 @@ Recommended content zones:
 - Helper row: info banners, tooltip icons, unit hints, validation.
 - Footer: cancel/confirm or task-specific submit.
 
+## Device Summary And Quick Actions
+
+The optimized detail view starts with a stable device summary. All five device states keep the same information structure and only switch the icon/status presentation.
+
+- Icon: 56 x 56px inside an 80 x 80px container. Hover exposes the approved preview/edit entry.
+- Primary title: device name, without a visible 设备名称 label. Support long names with ellipsis and full-value tooltip.
+- Metadata: plate number, model, and IMEI, shown as values without persistent field labels; hover reveals the field meaning.
+- IMEI: copyable, with success feedback IMEI号复制成功.
+- Video devices: 监控、追踪、回放、实时视频、视频回放.
+- Non-video devices: 监控、追踪、回放.
+- Quick actions use icon plus text and support default, hover, selected, and disabled states. Wrap to the next line when needed rather than compressing labels.
+- Keep device identity visible when a quick action starts a risky or multi-step operation.
+
+## Tab Overflow
+
+- Default visible capacity: 12 tabs.
+- When tabs exceed the available width, keep ··· at the far right and expose the remaining tabs through its menu.
+- The tab strip supports horizontal wheel scrolling while hovered.
+- The ··· entry needs default, hover, selected, and disabled states.
+- Selecting an overflow tab must keep the active location discoverable and preserve the active content state.
+
 ## Detail Tab
 
 Purpose: edit and inspect physical device and vehicle metadata.
@@ -81,12 +102,25 @@ Structure:
   - Vehicle icon picker is a grid of small hardware/vehicle icons; selected item gets a primary border.
   - Upload area is dashed, square, plus icon, and helper text such as jpg/jpeg/png under 1MB.
 
-Layout:
+Layout direction for new or redesigned PC forms:
 
-- Two columns on desktop.
-- Labels align right; values align left.
-- Keep field widths stable.
-- Do not split this into many small cards.
+- Use vertical fields: label above control, with fields flowing downward in task order.
+- Group fields into continuous business sections such as 设备信息 and 车辆信息, without turning each group into a floating card.
+- Keep control widths stable within a section and align validation/helper text with the control.
+- Use multiple columns only for tables, setting matrices, or genuine side-by-side comparison. Do not return to left-label/right-control form rows merely to increase density.
+- Preserve existing legacy forms when the current task does not authorize their redesign.
+
+Field-specific behavior:
+
+- ICCID empty: show placeholder 请输入 and retain the 查看详情 icon.
+- ICCID present: show ICCID, SIM-state icon, and 查看详情 icon.
+- 查看详情 hover: tooltip 查看详情; selected state opens the SIM information popover.
+- SIM popover fields: SIM卡状态、到期时间、本月流量、本月短信、开关机、GPRS功能、卡号、ICCID.
+- SIM states: 正常 green; 空号、到期停机、超额停机 red; 未开套餐 blue-grey; 待复机 yellow. Resolve exact values through component tokens/Figma.
+- 卫星模组号 empty: show - and retain the explanatory icon. Tooltip copy follows current approved logic.
+- Image upload: jpg/jpeg/png, at most 1MB; default, hover, selected, uploaded, preview, delete, and reset states are required.
+- Image preview dialog closes through the top-right close icon or bottom 关闭 action.
+- Device-icon selection/custom upload follows device-icon-guidelines.md. Remove any duplicate icon-changing entry from the field form when the optimized summary icon is the approved sole entry.
 
 ## Renewal Tab
 
@@ -132,7 +166,7 @@ Observed controls:
 Rules:
 
 - Use grouped rows; avoid turning each setting into a separate card.
-- Left/right columns are acceptable.
+- Use vertical label-above-control fields for new or redesigned settings. A multi-column matrix is acceptable only when users must compare parallel channels or repeated settings.
 - Unit inputs should be compact and aligned.
 - Disabled switches should look intentionally off, not broken.
 - Technical labels may remain terse; add tooltips for ambiguous hardware terms.
@@ -264,10 +298,10 @@ Use the same workbench shell:
 
 ## Review Checklist For This Workbench
 
-- Is the dialog wide enough for two-column hardware forms?
+- Is the dialog wide enough for dense vertical forms, tables, and setting matrices without clipping?
 - Are IMEI, SIM, ICCID, model, status, and expiry visible in the relevant flow?
 - Are active tabs and footer actions consistent with the existing workbench?
-- Are form labels aligned and controls stable in width?
+- Are labels above their controls, field order task-oriented, and control widths stable?
 - Are command/alarm settings grouped by hardware meaning?
 - Are dangerous operations confirmable?
 - Are disabled/read-only fields visually distinct from editable fields?

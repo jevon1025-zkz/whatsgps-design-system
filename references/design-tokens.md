@@ -2,6 +2,8 @@
 
 This reference is the source for Figma Variables and frontend global variables. Use slash names for Figma variables and CSS custom property names for code output.
 
+Color-token note: for current color work, [color-token-governance.md](color-token-governance.md) and the bundled [color guide](../assets/source-materials/design-token-color-guide.md) supersede the older `Color` / `color/*` guidance in this file. Use this file for typography, spacing, radius, shadow, size, motion, and historical frontend token reference unless the user explicitly asks to revisit the legacy color model.
+
 ## Figma Collections
 
 Create these Figma variable collections:

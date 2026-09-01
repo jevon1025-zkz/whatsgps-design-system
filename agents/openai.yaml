@@ -1,5 +1,5 @@
 interface:
-  display_name: "WhatsGPS Design System"
-  short_description: "生成和审查 WhatsGPS 硬件设备后台 UI/UX 规范"
+  display_name: "WhatsGPS Design System 3.0"
+  short_description: "WhatsGPS PC 导航、搜索、消息、设备图标与详情设计规范"
   brand_color: "#0068FF"
-  default_prompt: "Use $whatsgps-design-system to design or review WhatsGPS hardware device management UI/UX."
+  default_prompt: "Use $whatsgps-design-system to design or review WhatsGPS PC navigation, search, reminders, device icons, and device-detail UI/UX."

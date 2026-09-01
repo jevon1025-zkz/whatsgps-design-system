@@ -177,7 +177,7 @@ Required behavior:
 - Validation text appears near the field.
 - Related fields are grouped by business function.
 
-For WhatsGPS, two-column forms are acceptable in wide workbench dialogs. Use one-column only when the task is narrow or the field order is critical.
+For new or substantially redesigned WhatsGPS PC forms, place each label above its control and order fields vertically by task. Use multi-column structures only for repeated setting matrices, tables, or genuine side-by-side comparison. Preserve a legacy form when the current task does not authorize its redesign.
 
 ## 7. Table UX Rules
 
@@ -289,4 +289,3 @@ Each finding should include:
 - User impact.
 - Suggested fix.
 - Related page family or component rule.
-
